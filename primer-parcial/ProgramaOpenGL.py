@@ -1,6 +1,7 @@
 from OpenGL.GL import *
 from glew_wish import *
 import glfw 
+import random
 
 def main():
     #iniciar glfw
@@ -44,10 +45,17 @@ def main():
 
     #ciclo de dibujo
     while not glfw.window_should_close(window):
+        color1=random.random()
+        color2=random.random()
+        color3=random.random()
         #region de dibujo 
         glViewport(0,0,800,600)
-        #color de borrado
-        glClearColor(0.5,1,0,1)
+             
+
+        glClearColor(color1,color2,color3,1)
+        #glClearColor(rojo,verde,azul,1)
+
+        
         #borrar contenido
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
 
